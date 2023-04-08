@@ -29,4 +29,13 @@ public:
 		cout << "[x: " << x << ", y: " << y << "]" << endl;
 	}
 	~Point() = default;
+
+	friend Point operator+(const Point& point1, const Point& point2);
+	friend Point operator-(const Point& point1, const Point& point2);
+	friend Point operator*(const Point& point1, const Point& point2);
+	friend Point operator/(const Point& point1, const Point& point2);
+	Point& operator++();
+	Point& operator--();
+	const Point operator++(int);
+	const Point operator--(int);
 };
