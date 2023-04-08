@@ -34,8 +34,19 @@ public:
 	friend Point operator-(const Point& point1, const Point& point2);
 	friend Point operator*(const Point& point1, const Point& point2);
 	friend Point operator/(const Point& point1, const Point& point2);
+
+	friend bool operator==(const Point& point1, const Point& point2);
+	friend bool operator!=(const Point& point1, const Point& point2);
+    friend bool operator>(const Point& point1, const Point& point2);
+	friend bool operator<(const Point& point1, const Point& point2);
+	friend bool operator>=(const Point& point1, const Point& point2);
+	friend bool operator<=(const Point& point1, const Point& point2);
+
 	Point& operator++();
 	Point& operator--();
 	const Point operator++(int);
 	const Point operator--(int);
+
+	friend ostream& operator<< (ostream& output, const Point& point);
+	friend istream& operator>> (istream& input, Point &point);
 };

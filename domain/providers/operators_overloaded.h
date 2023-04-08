@@ -42,3 +42,31 @@ const Point Point::operator--(int)
 	--(*this);
 	return point;
 }
+
+bool operator==(const Point& point1, const Point& point2){
+   return point1.x == point2.x && point1.y == point2.y;
+}
+bool operator!=(const Point& point1, const Point& point2){
+	return !(point1 == point2);
+}
+bool operator>(const Point& point1, const Point& point2){
+	return point1.x > point2.x && point1.y > point2.y;
+}
+bool operator<(const Point& point1, const Point& point2){
+	return point1.x < point2.x && point1.y < point2.y;
+}
+bool operator>=(const Point& point1, const Point& point2){
+	return point1.x >= point2.x && point1.y >= point2.y;
+}
+bool operator<=(const Point& point1, const Point& point2){
+	return point1.x <= point2.x && point1.y <= point2.y;
+}
+ostream& operator<< (ostream& output, const Point& point) {
+	output << "[" << point.x << " : " << point.y << "]";
+	return output;
+}
+istream& operator>> (istream& input, Point &point){
+	cout << "Enter x: "; input >> point.x;
+	cout << "Enter y: "; input >> point.y;
+	return input;
+}
