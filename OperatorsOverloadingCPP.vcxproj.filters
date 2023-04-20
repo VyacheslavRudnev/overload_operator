@@ -23,7 +23,7 @@
     <ClInclude Include="internal\application.h">
       <Filter>internal</Filter>
     </ClInclude>
-    <ClInclude Include="domain\models\Point.h">
+    <ClInclude Include="domain\models\Fraction.h">
       <Filter>domain\models</Filter>
     </ClInclude>
     <ClInclude Include="domain\providers\operators_overloaded.h">

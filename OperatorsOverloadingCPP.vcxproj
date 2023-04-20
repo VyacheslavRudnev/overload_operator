@@ -130,7 +130,7 @@
     <ClCompile Include="internal\application.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="domain\models\Point.h" />
+    <ClInclude Include="domain\models\Fraction.h" />
     <ClInclude Include="domain\providers\operators_overloaded.h" />
     <ClInclude Include="internal\application.h" />
   </ItemGroup>
