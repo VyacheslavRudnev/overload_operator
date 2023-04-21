@@ -4,12 +4,22 @@ int main()
 {
 	try
 	{
-		Point point1;
-		Point point2;
-		cin >> point1;
-		cin >> point2;
-		cout << point1 << endl;
-		cout << point2 << endl;
+		Complex c1(2.0, 3.0);
+		Complex c2(5.0, 4.0);
+		
+
+		Complex c3 = c1 + c2;
+		c3.print();
+
+		Complex c4 = c1 - c2;
+		c4.print();
+
+		Complex c5 = c1 * c2;
+		c5.print();
+		
+		Complex c6 = c1 / c2;
+		c6.print();
+
 	}
 	catch (const char* msg)
 	{
