@@ -2,6 +2,8 @@
 
 int main()
 {
+	ukr_lang;
+
 	try
 	{
 		Point point1;
