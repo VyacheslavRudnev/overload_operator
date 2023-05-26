@@ -127,9 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="domain\models\MyClass.cpp" />
     <ClCompile Include="internal\application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="domain\models\MyClass.h" />
     <ClInclude Include="domain\models\Point.h" />
     <ClInclude Include="domain\providers\operators_overloaded.h" />
     <ClInclude Include="internal\application.h" />

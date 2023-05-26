@@ -1,4 +1,6 @@
 #include "../models/Point.h"
+#include "../models/MyClass.h"
+
 
 Point operator +(const Point& point1,const Point& point2)
 {
@@ -69,4 +71,23 @@ istream& operator>> (istream& input, Point &point){
 	cout << "Enter x: "; input >> point.x;
 	cout << "Enter y: "; input >> point.y;
 	return input;
+}
+bool MyClass::operator&&(const MyClass& other) const {
+	return value && other.value;
+}
+
+bool MyClass::operator||(const MyClass& other) const {
+	return value || other.value;
+}
+
+bool MyClass::operator!() const {
+	return !value;
+}
+
+void MyClass::printValue() const {
+	println("Value: " << value);
+}
+
+void MyClass_2::printValue() const {
+	println("Value: " << value);
 }
