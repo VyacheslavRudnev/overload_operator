@@ -91,3 +91,43 @@ void MyClass::printValue() const {
 void MyClass_2::printValue() const {
 	println("Value: " << value);
 }
+
+// Перевантаження оператора додавання-присвоєння (+=)
+Point& Point::operator+=(const Point& other) {
+	x += other.x;
+	y += other.y;
+	return *this;
+}
+// Перевантаження оператора віднімання-присвоєння (-=)
+Point& Point::operator-=(const Point& other) {
+	x -= other.x;
+	y -= other.y;
+	return *this;
+}
+
+// Перевантаження оператора множення-присвоєння (*=)
+Point& Point::operator*=(const int scalar) {
+	x *= scalar;
+	y *= scalar;
+	return *this;
+}
+
+Point& Point::operator*=(const Point& other) {
+	x *= other.x;
+	y *= other.y;
+	return *this;
+}
+
+// Перевантаження оператора ділення-присвоєння (/=)
+Point& Point::operator/=(const int scalar) {
+	x /= scalar;
+	y /= scalar;
+	return *this;
+}
+
+// Перевантаження оператора залишку-присвоєння (%=)
+Point& Point::operator%=(const int scalar) {
+	x %= scalar;
+	y %= scalar;
+	return *this;
+}

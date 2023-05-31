@@ -26,7 +26,7 @@ public:
 	}
 	void print()
 	{
-		cout << "[x: " << x << ", y: " << y << "]" << endl;
+		println("[x: " << x << ", y: " << y << "]");
 	}
 	~Point() = default;
 
@@ -49,4 +49,15 @@ public:
 
 	friend ostream& operator<< (ostream& output, const Point& point);
 	friend istream& operator>> (istream& input, Point &point);
+
+	// Перевантаження операторів (+=, -=, *=, /=, %=)
+	Point& operator+=(const Point& other);
+	Point& operator-=(const Point& other);
+	Point& operator*=(const int scalar); //варіант 1 
+	Point& operator*=(const Point& other);//варіант 2
+	Point& operator/=(const int scalar);
+	Point& operator%=(const int scalar);
+
+
+
 };

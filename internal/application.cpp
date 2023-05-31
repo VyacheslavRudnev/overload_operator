@@ -7,10 +7,10 @@ int main()
 
 	try
 	{
-		// Перевантажені оператори &&, ||, !
+		// Перевантажені оператори &&, ||, ! для класу MyClass
 		MyClass obj1(true);
 		MyClass obj2(false);
-		println("Перевантажені оператори &&, ||, ! ");
+		println("Перевантажені оператори &&, ||, ! для класу MyClass");
 
 		MyClass result1 = obj1 && obj2;
 		result1.printValue();
@@ -26,7 +26,7 @@ int main()
 		MyClass_2 obj4(10);
 		MyClass_2 obj5(5);
 
-		println("Перевантажені оператори =, +=, -=, *=, /=, %=");
+		println("Перевантажені оператори =, +=, -=, *=, /=, %= для класу MyClass_2");
 		// оператор присвоєння (=)
 		MyClass_2 result4 = obj4;
 		result4.printValue();  // Output: Value: 10
@@ -50,6 +50,37 @@ int main()
 		// оператор залишку-присвоєння (%=)
 		result4 %= obj5;
 		result4.printValue();  // Output: Value: 0
+		next_line;
+		
+		println("Перевантажені оператори для класу Point +=, -=, *=, /=, %=");
+		Point p1(1, 2);
+		Point p2(2, 2);
+		println("P1 ");
+		p1.print();
+		println("P2 ");
+		p2.print();
+		next_line;
+		p1 += p2;
+		p1.print();
+		
+		p1 -= p2;
+		p1.print();
+		
+		p1 *= 2;
+		p1.print();
+		println("Перевантаження *= перший варіант *2");
+		
+		p1 *= p2;
+		p1.print();
+		println("Перевантаження *= другий варіант ");
+		
+		p1 /= 2;
+		p1.print();
+		p2 /= 2;
+		p2.print();
+
+		p1 %= 3;
+		p1.print();
 
 
 	}
