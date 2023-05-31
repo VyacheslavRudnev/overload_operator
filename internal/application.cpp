@@ -81,8 +81,24 @@ int main()
 
 		p1 %= 3;
 		p1.print();
-
-
+		next_line;
+		
+		println("Перевантаження оператору = для класу Name");
+		next_line;
+		char firstName[20] = "Вячеслав";
+		char secondName[20] = "Руднєв";
+		
+		Name aName;
+		Name name(firstName, secondName);
+			cout << "Конструктор об'єкта name: ";
+			name.write();
+			aName = name;
+			cout << "Присвоєння об'єкта aName: ";
+			aName.write();
+		println("Деструктор об'єкта name");
+		cout << "Звернення до об'єкта aName: ";
+		aName.write();
+		_getch();
 	}
 	catch (const char* msg)
 	{

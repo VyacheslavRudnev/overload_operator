@@ -1,5 +1,6 @@
 #include "../models/Point.h"
 #include "../models/MyClass.h"
+#include "../models/Name.h"
 
 
 Point operator +(const Point& point1,const Point& point2)
@@ -130,4 +131,22 @@ Point& Point::operator%=(const int scalar) {
 	x %= scalar;
 	y %= scalar;
 	return *this;
+}
+
+Name& Name::operator= (const Name& name)
+{
+	if (this == &name)
+	{ 
+		return *this;
+	}
+	remove();
+	
+	setCharArray(firstName, name.firstName);
+	setCharArray(secondName, name.secondName);
+		return *this;
+}
+
+void writeLine(Name name)
+{
+	name.write();
 }
