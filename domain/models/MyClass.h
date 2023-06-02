@@ -18,18 +18,9 @@ class MyClass2
 {
 public:
     // Перевантаження оператора (new)
-    void* operator new(size_t size);/* {
-        println("Виклик спеціального оператора new. Розмір: " << size);
-        void* memory = malloc(size);
-        return memory;
-    }*/
+    void* operator new(size_t size);
+	// Перевантаження оператора (delete)
+    void operator delete(void* memory);
 
-    void operator delete(void* memory);/* {
-        println("Виклик перевантаженого оператора delete.");
-        free(memory);
-    }*/
-
-    void printMessage();/* {
-        println("Hello from MyClass");
-    }*/
+    void printMessage();
 };
