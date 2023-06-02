@@ -1,6 +1,7 @@
 #include "../models/Point.h"
 #include "../models/MyClass.h"
 #include "../models/Name.h"
+#include "../models/Arrey.h"
 
 
 Point operator +(const Point& point1,const Point& point2)
@@ -89,24 +90,33 @@ void MyClass::printValue() const {
 	println("Value: " << value);
 }
 
-void MyClass_2::printValue() const {
-	println("Value: " << value);
+void* MyClass2::operator new(size_t size) {
+	println("Виклик спеціального оператора new. Розмір: " << size);
+	void* memory = malloc(size);
+	return memory;
 }
 
-// Перевантаження оператора додавання-присвоєння (+=)
+void MyClass2::operator delete(void* memory) {
+	println("Виклик перевантаженого оператора delete.");
+	free(memory);
+}
+
+void MyClass2::printMessage() {
+	println("Hello from MyClass");
+}
+
 Point& Point::operator+=(const Point& other) {
 	x += other.x;
 	y += other.y;
 	return *this;
 }
-// Перевантаження оператора віднімання-присвоєння (-=)
+
 Point& Point::operator-=(const Point& other) {
 	x -= other.x;
 	y -= other.y;
 	return *this;
 }
 
-// Перевантаження оператора множення-присвоєння (*=)
 Point& Point::operator*=(const int scalar) {
 	x *= scalar;
 	y *= scalar;
@@ -119,14 +129,12 @@ Point& Point::operator*=(const Point& other) {
 	return *this;
 }
 
-// Перевантаження оператора ділення-присвоєння (/=)
 Point& Point::operator/=(const int scalar) {
 	x /= scalar;
 	y /= scalar;
 	return *this;
 }
 
-// Перевантаження оператора залишку-присвоєння (%=)
 Point& Point::operator%=(const int scalar) {
 	x %= scalar;
 	y %= scalar;
@@ -149,4 +157,31 @@ Name& Name::operator= (const Name& name)
 void writeLine(Name name)
 {
 	name.write();
+}
+//Перевантаження ооператора = для класу Array
+Array& Array::operator=(const Array& other)
+{
+	cout << "Виклик оператора = " << this << endl;
+	this->Size = other.Size;
+	if (this->data != nullptr)
+	{
+		delete[] this->data;
+	}
+	this->data = new int[other.Size];
+	for (int i = 0; i < other.Size; i++)
+	{
+		this->data[i] = other.data[i];
+	}
+	return *this;
+}
+
+int Array::printArray()
+{
+	for (int i = 0; i < Size; i++)
+	{
+		cout << data[i] << " ";
+	}
+	next_line;
+
+	return 0;
 }

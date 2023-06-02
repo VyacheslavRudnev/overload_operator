@@ -57,7 +57,10 @@ public:
 	Point& operator*=(const Point& other);//варіант 2
 	Point& operator/=(const int scalar);
 	Point& operator%=(const int scalar);
-
+	
+	// Перевантаження оператора ()
+	int operator()() { return x + y; }
+		
 
 
 };

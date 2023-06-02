@@ -7,7 +7,6 @@ int main()
 
 	try
 	{
-		// Перевантажені оператори &&, ||, ! для класу MyClass
 		MyClass obj1(true);
 		MyClass obj2(false);
 		println("Перевантажені оператори &&, ||, ! для класу MyClass");
@@ -21,37 +20,13 @@ int main()
 		MyClass result3 = !obj1;
 		result3.printValue();
 		next_line;
-
-		// Перевантажені оператори =, +=, -=, *=, /=, %=
-		MyClass_2 obj4(10);
-		MyClass_2 obj5(5);
-
-		println("Перевантажені оператори =, +=, -=, *=, /=, %= для класу MyClass_2");
-		// оператор присвоєння (=)
-		MyClass_2 result4 = obj4;
-		result4.printValue();  // Output: Value: 10
-
-		// оператор додавання-присвоєння (+=)
-		result4 += obj5;
-		result4.printValue();  // Output: Value: 15
-
-		// оператор віднімання-присвоєння (-=)
-		result4 -= obj5;
-		result4.printValue();  // Output: Value: 10
-
-		// оператор множення-присвоєння (*=)
-		result4 *= obj5;
-		result4.printValue();  // Output: Value: 50
-
-		// оператор ділення-присвоєння (/=)
-		result4 /= obj5;
-		result4.printValue();  // Output: Value: 10
-
-		// оператор залишку-присвоєння (%=)
-		result4 %= obj5;
-		result4.printValue();  // Output: Value: 0
-		next_line;
 		
+		println("Перевантажені оператори new delete для класу MyClass2");
+		MyClass2* obj = new MyClass2();
+		obj->printMessage();
+		delete obj;
+		next_line;
+
 		println("Перевантажені оператори для класу Point +=, -=, *=, /=, %=");
 		Point p1(1, 2);
 		Point p2(2, 2);
@@ -68,11 +43,11 @@ int main()
 		
 		p1 *= 2;
 		p1.print();
-		println("Перевантаження *= перший варіант *2");
+		println("Перевантаження *= варіант 1");
 		
 		p1 *= p2;
 		p1.print();
-		println("Перевантаження *= другий варіант ");
+		println("Перевантаження *= варіант 2");
 		
 		p1 /= 2;
 		p1.print();
@@ -82,8 +57,12 @@ int main()
 		p1 %= 3;
 		p1.print();
 		next_line;
+		println("Перевантаження оператора () для класу Point (x+y)");
+		Point point(1, 2);
+		println(point());
+		next_line;
 		
-		println("Перевантаження оператору = для класу Name");
+		println("Перевантаження оператора = для класу Name");
 		next_line;
 		char firstName[20] = "Вячеслав";
 		char secondName[20] = "Руднєв";
@@ -98,7 +77,29 @@ int main()
 		println("Деструктор об'єкта name");
 		cout << "Звернення до об'єкта aName: ";
 		aName.write();
-		_getch();
+		next_line;
+		
+		println("Перевантаження оператора = для класу Array");
+		Array arr1(5);
+		Array arr2(2);
+		arr1 = arr2;
+
+		println("Перевантаження оператора [] для класу Array");
+		Array a(10);
+		println("Запит значання елемента масиву за індексом 3: ")
+		println(a[3]);
+		a.printArray();
+		println("Запис нового значання в масив за індексом 3: ")
+		a[3] = 777;
+		a.printArray();
+		next_line;
+		//перевірка на вихід за межі масиву
+		println(a[-1]);
+		println(a[100]);
+
+		
+
+
 	}
 	catch (const char* msg)
 	{
